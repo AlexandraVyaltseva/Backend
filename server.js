@@ -3,6 +3,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var multer = require('multer');
 var path = require('path')
+var port = 3000;
 
 var storage = multer.diskStorage({
     destination: function(req, file, callback) {
@@ -233,4 +234,6 @@ app.post('/register', function(req, res, next) {
         });
 });
 
-app.listen(3000);
+app.listen(port, function() {
+    console.log('App listening on port ' + port + '!');
+});
